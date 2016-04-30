@@ -23,7 +23,7 @@ $(document).on('click', '#clean', function (options) {
         data: {text: $('#text').val()},
         //Ajax events
         success: function (data) {
-            console.log(data);
+            $('#correct').val(data.text);
         },
         error: function () {
             console.log("oops");
