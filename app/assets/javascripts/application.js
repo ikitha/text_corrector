@@ -14,3 +14,19 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+$(document).on('click', '#clean', function (options) {
+  $.ajax({
+        url: '/home',  //Server script to process data
+        type: 'POST',
+        dataType: 'json',
+        // Form data
+        data: {text: $('#text').val()},
+        //Ajax events
+        success: function (data) {
+            console.log(data);
+        },
+        error: function () {
+            console.log("oops");
+        }
+    });
+});
